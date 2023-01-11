@@ -73,9 +73,28 @@ button#delete {
 //  images
 //--------------------------
 
-img {
-  width: 300px;
-  height: 300px;
-  border-radius: 90px;
-  object-fit: cover;
+$imagesize: 300px;
+$cardpadding: 10px;
+
+$imagesize: 300px;
+$cardpadding: 10px;
+
+img{
+    width: $imagesize;
+    height: $imagesize;
+    border-radius: 90px;
+    object-fit: cover;
 }
+
+.container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(calc($imagesize + $cardpadding), max-content));
+    grid-gap: 16px;
+    justify-content: center;
+    .card{
+        border: 1px black solid;
+        border-radius: 5px;
+        padding: $cardpadding
+    }
+}
+
